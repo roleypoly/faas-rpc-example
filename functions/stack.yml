@@ -1,0 +1,20 @@
+version: 1.0
+provider:
+  name: openfaas
+functions:
+  greeter--say-hello:
+    lang: golang-grpc
+    handler: ./greeter--say-hello
+    image: roleypoly/greeter-say-hello:latest
+    labels:
+      com.openfaas.scale.zero: true
+    annotations:
+      com.roleypoly/faas-rpc: greeter.Greeter/SayHello   
+  greeter--say-hello-again:
+    lang: golang-grpc
+    handler: ./greeter--say-hello-again
+    image: roleypoly/greeter-say-hello-again:latest
+    labels:
+      com.openfaas.scale.zero: true
+    annotations:
+      com.roleypoly/faas-rpc: greeter.Greeter/SayHelloAgain  
