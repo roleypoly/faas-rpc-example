@@ -2,7 +2,19 @@
 
 This is an end-to-end example of Roleypoly's OpenFaaS gRPC system. 
 
-This is system is a proof of concept. Not used at scale or in production.
+This is system is a **proof of concept**. Not used at scale or in production.
+
+The design goals here are 
+
+- One FaaS deployment per gRPC method
+- Scale-to-Zero (comes with OpenFaaS)
+- Touch as little Kubernetes as possible.
+
+Two projects help this succeed:
+- [**openfaas-grpc-controller**](https://github.com/roleypoly/openfaas-grpc-controller)
+    - Kubernetes observer for pods that OpenFaaS deploys
+- [**golang-grpc**](https://github.com/roleypoly/openfaas-templates)
+    - OpenFaaS template for wiring up gRPC methods.
 
 ## prerequisites
 
