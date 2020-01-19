@@ -54,7 +54,7 @@ faas deploy stack.yml
 
 ## test it out
 
-**CLI**
+**CLI** (not currently working. HTTPS is required.)
 
 ```sh
 go run ./tester SayHello Taylor
