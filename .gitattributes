@@ -1,0 +1,2 @@
+proto/greeter/* linguist-generated=true
+proto/greeter/*.proto linguist-generated=false
