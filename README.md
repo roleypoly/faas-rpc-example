@@ -2,6 +2,8 @@
 
 This is an end-to-end example of Roleypoly's OpenFaaS gRPC system. 
 
+This is system is a proof of concept. Not used at scale or in production.
+
 ## prerequisites
 
 **Required:**
@@ -18,7 +20,7 @@ This is an end-to-end example of Roleypoly's OpenFaaS gRPC system.
 
 ```sh
 # Install OpenFaaS
-k3sup app install openfaas
+k3sup app install openfaas --set=faasIdler.dryRun=false
 
 # Install Ingress Controller
 k3sup app install nginx-ingress # --host-mode optional
