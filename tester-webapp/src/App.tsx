@@ -16,8 +16,12 @@ const App: React.FC = () => {
         request.setName(name);
   
         const rpc = (timesPressed % 2 === 1 ? greeter.sayHello(request) : greeter.sayHelloAgain(request));
-        const message: HelloReply = await rpc;
-        setMessage(message.getMessage());
+        try {
+          const message: HelloReply = await rpc;
+          setMessage(message.getMessage());
+        } catch (e) {
+          setMessage(`ERROR: ${e}`)
+        }
       }
     }
     update();

@@ -9,7 +9,7 @@ functions:
     labels:
       com.openfaas.scale.zero: true
     annotations:
-      com.roleypoly/faas-rpc: greeter.Greeter/SayHello   
+      com.roleypoly/faas-rpc: greeter.Greeter/SayHello$  
   greeter--say-hello-again:
     lang: golang-grpc
     handler: ./greeter--say-hello-again
@@ -17,4 +17,4 @@ functions:
     labels:
       com.openfaas.scale.zero: true
     annotations:
-      com.roleypoly/faas-rpc: greeter.Greeter/SayHelloAgain  
+      com.roleypoly/faas-rpc: greeter.Greeter/SayHelloAgain$
