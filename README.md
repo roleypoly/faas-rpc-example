@@ -27,12 +27,6 @@ k3sup app install nginx-ingress # --host-mode optional
 kubectl apply -f ./k8s/bootstrap
 ```
 
-## login to openfaas
-
-```sh
-faas login --password $(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
-```
-
 ## port forward some stuff
 
 ```sh
@@ -42,6 +36,13 @@ kubectl port-forward -n openfaas svc/gateway 8080:8080 &
 # Need ingress controller to use the magic!!
 kubectl port-forward svc/nginx-ingress-controller 8081:80 & # testers assume localhost:8081
 ```
+
+## login to openfaas
+
+```sh
+faas login --password $(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+```
+
 
 ## add the functions
 
