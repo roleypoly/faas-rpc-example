@@ -12,7 +12,7 @@ The design goals here are
 
 Two projects help this succeed:
 - [**openfaas-grpc-controller**](https://github.com/roleypoly/openfaas-grpc-controller)
-    - Kubernetes observer for pods that OpenFaaS deploys
+    - Kubernetes observer for pods that OpenFaaS deploys, and creates ingress routes for them.
 - [**golang-grpc**](https://github.com/roleypoly/openfaas-templates)
     - OpenFaaS template for wiring up gRPC methods.
 
