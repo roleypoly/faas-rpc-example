@@ -27,6 +27,12 @@ k3sup app install nginx-ingress # --host-mode optional
 kubectl apply -f ./k8s/bootstrap
 ```
 
+## login to openfaas
+
+```sh
+faas login --password $(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+```
+
 ## port forward some stuff
 
 ```sh
@@ -43,6 +49,8 @@ kubectl port-forward svc/nginx-ingress-controller 8081:80 & # testers assume loc
 cd functions
 faas deploy stack.yml
 ```
+
+(fyi, you'll need to change image paths in `./functions/stack.yml` to deploy changes)
 
 ## test it out
 
